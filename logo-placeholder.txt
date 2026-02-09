@@ -1,0 +1,22 @@
+# Logo Placeholder
+
+This is a placeholder file for your logo.
+
+To add your logo to the International All Fours Live website:
+
+1. Place your logo image file in the `public` folder
+2. Name it `logo.png` (or `logo.jpg`, `logo.svg`, etc.)
+3. The Logo component in `src/components/logo.tsx` will automatically use it
+
+Supported image formats:
+- PNG (recommended for best quality)
+- JPG/JPEG
+- SVG (for vector graphics)
+- WebP
+
+Recommended logo sizes:
+- Header: 150x50 pixels
+- Hero section: 300x300 pixels
+- Footer: 120x40 pixels
+
+The Logo component will automatically resize your logo to fit these dimensions while maintaining aspect ratio.

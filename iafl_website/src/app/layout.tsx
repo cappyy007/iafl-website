@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import { Header } from "../components/header";
+import { ConvexClientProvider } from "../lib/convex-client-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Web Design Course | Learn Modern Web Design",
-  description: "Master modern web design principles and create stunning websites with our comprehensive course.",
+  title: "International All Fours Live | The Ultimate All Fours Media House",
+  description: "Your premier destination for all things All Fours - live streams, tutorials, tournaments, community, and more.",
 };
 
 export default function RootLayout({
@@ -16,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={openSans.className}>
+        <ConvexClientProvider>
+          <Header />
+          {children}
+        </ConvexClientProvider>
+      </body>
     </html>
   );
 }

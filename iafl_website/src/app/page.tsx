@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,27 +7,53 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Layout, Palette, Code, Smartphone, Zap, Users, CheckCircle2 } from "lucide-react";
+import { Play, Trophy, BookOpen, Users, TrendingUp, Globe, CheckCircle2, Radio } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      {/* Header */}
+      <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Logo width={150} height={50} className="flex-shrink-0" />
+            <nav className="flex items-center gap-6">
+              <Link href="/schedule" className="text-sm font-medium hover:text-primary transition-colors">
+                Schedule
+              </Link>
+              <Link href="/score-app" className="text-sm font-medium hover:text-primary transition-colors">
+                Score App
+              </Link>
+            </nav>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          <Logo width={300} height={300} className="mb-8" />
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Master Modern Web Design
+            International All Fours Live
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-            Learn to create stunning, responsive websites with our comprehensive web design course. From fundamentals to advanced techniques.
+            Your premier destination for all things All Fours - live streams, tutorials, tournaments, and a thriving community of players worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="text-lg px-8">
-              Start Learning
+              Watch Live
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              View Curriculum
-            </Button>
+            <Link href="/schedule">
+              <Button size="lg" variant="outline" className="text-lg px-8">
+                View Schedule
+              </Button>
+            </Link>
+            <Link href="/score-app">
+              <Button size="lg" variant="secondary" className="text-lg px-8">
+                Score App
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -35,63 +62,63 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 bg-muted/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            What You'll Learn
+            What We Offer
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Master the essential skills and tools used by professional web designers
+            Experience All Fours like never before with our comprehensive media coverage
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
-                <Layout className="w-12 h-12 mb-4" />
-                <CardTitle>Responsive Design</CardTitle>
+                <Play className="w-12 h-12 mb-4" />
+                <CardTitle>Live Streams</CardTitle>
                 <CardDescription>
-                  Create websites that look great on all devices, from mobile to desktop
+                  Watch live All Fours matches with expert commentary and real-time analysis
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
-                <Palette className="w-12 h-12 mb-4" />
-                <CardTitle>Color Theory</CardTitle>
+                <Trophy className="w-12 h-12 mb-4" />
+                <CardTitle>Tournaments</CardTitle>
                 <CardDescription>
-                  Understand how to use color effectively to create visually appealing designs
+                  Coverage of major tournaments and competitive events from around the world
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
-                <Code className="w-12 h-12 mb-4" />
-                <CardTitle>HTML & CSS</CardTitle>
+                <BookOpen className="w-12 h-12 mb-4" />
+                <CardTitle>Tutorials</CardTitle>
                 <CardDescription>
-                  Build a solid foundation with modern HTML5 and CSS3 techniques
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Smartphone className="w-12 h-12 mb-4" />
-                <CardTitle>Mobile First</CardTitle>
-                <CardDescription>
-                  Learn to design for mobile devices first, then scale up
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Zap className="w-12 h-12 mb-4" />
-                <CardTitle>Performance</CardTitle>
-                <CardDescription>
-                  Optimize your websites for speed and better user experience
+                  Learn strategies, techniques, and tips from seasoned All Fours players
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card>
               <CardHeader>
                 <Users className="w-12 h-12 mb-4" />
-                <CardTitle>UX Principles</CardTitle>
+                <CardTitle>Community</CardTitle>
                 <CardDescription>
-                  Apply user experience best practices to create intuitive interfaces
+                  Join a vibrant community of All Fours enthusiasts and share your passion
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <TrendingUp className="w-12 h-12 mb-4" />
+                <CardTitle>Strategy Guides</CardTitle>
+                <CardDescription>
+                  Deep dives into advanced strategies and gameplay analysis
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Radio className="w-12 h-12 mb-4" />
+                <CardTitle>Podcasts</CardTitle>
+                <CardDescription>
+                  Listen to discussions, interviews, and All Fours talk shows
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -99,14 +126,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Curriculum Section */}
+      {/* Offerings Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Course Curriculum
+            Our Content
           </h2>
           <p className="text-muted-foreground text-center mb-12">
-            A structured learning path from basics to mastery
+            Diverse content to satisfy every All Fours enthusiast
           </p>
           <div className="space-y-4">
             <Card>
@@ -116,9 +143,9 @@ export default function Home() {
                     1
                   </div>
                   <div className="flex-1">
-                    <CardTitle>Introduction to Web Design</CardTitle>
+                    <CardTitle>Live Tournament Coverage</CardTitle>
                     <CardDescription className="mt-2">
-                      Understanding the web, design principles, and getting started with tools
+                      Real-time streaming of competitive matches with professional commentary
                     </CardDescription>
                   </div>
                 </div>
@@ -131,9 +158,9 @@ export default function Home() {
                     2
                   </div>
                   <div className="flex-1">
-                    <CardTitle>HTML Fundamentals</CardTitle>
+                    <CardTitle>Player Interviews</CardTitle>
                     <CardDescription className="mt-2">
-                      Master semantic HTML5, document structure, and accessibility
+                      In-depth conversations with top players and legends of the game
                     </CardDescription>
                   </div>
                 </div>
@@ -146,9 +173,9 @@ export default function Home() {
                     3
                   </div>
                   <div className="flex-1">
-                    <CardTitle>CSS Styling & Layout</CardTitle>
+                    <CardTitle>Educational Series</CardTitle>
                     <CardDescription className="mt-2">
-                      Learn Flexbox, Grid, typography, colors, and modern CSS techniques
+                      Step-by-step tutorials for beginners to advanced players
                     </CardDescription>
                   </div>
                 </div>
@@ -161,9 +188,9 @@ export default function Home() {
                     4
                   </div>
                   <div className="flex-1">
-                    <CardTitle>Responsive Design</CardTitle>
+                    <CardTitle>Strategy Breakdowns</CardTitle>
                     <CardDescription className="mt-2">
-                      Build fluid layouts that adapt to any screen size
+                      Analysis of key plays and strategic decisions from recent matches
                     </CardDescription>
                   </div>
                 </div>
@@ -176,9 +203,9 @@ export default function Home() {
                     5
                   </div>
                   <div className="flex-1">
-                    <CardTitle>Advanced Techniques</CardTitle>
+                    <CardTitle>Community Events</CardTitle>
                     <CardDescription className="mt-2">
-                      Animations, transitions, and modern design patterns
+                      Participate in online tournaments, challenges, and community gatherings
                     </CardDescription>
                   </div>
                 </div>
@@ -192,37 +219,37 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 bg-muted/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Why Choose This Course?
+            Why Choose International All Fours Live?
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Everything you need to become a professional web designer
+            The ultimate All Fours experience for players and fans worldwide
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Hands-on Projects</h3>
+                  <h3 className="font-semibold mb-1">Expert Commentary</h3>
                   <p className="text-muted-foreground">
-                    Build real websites as you learn, with practical exercises
+                    Professional insight and analysis from experienced All Fours players
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Expert Instruction</h3>
+                  <h3 className="font-semibold mb-1">High-Quality Production</h3>
                   <p className="text-muted-foreground">
-                    Learn from industry professionals with years of experience
+                    Crystal clear video and audio for an immersive viewing experience
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Lifetime Access</h3>
+                  <h3 className="font-semibold mb-1">Global Community</h3>
                   <p className="text-muted-foreground">
-                    Learn at your own pace with unlimited access to course materials
+                    Connect with All Fours enthusiasts from around the world
                   </p>
                 </div>
               </div>
@@ -231,27 +258,27 @@ export default function Home() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Community Support</h3>
+                  <h3 className="font-semibold mb-1">Regular Content</h3>
                   <p className="text-muted-foreground">
-                    Join a community of learners and get help when you need it
+                    Fresh content daily with live streams, videos, and articles
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Updated Content</h3>
+                  <h3 className="font-semibold mb-1">Interactive Experience</h3>
                   <p className="text-muted-foreground">
-                    Stay current with the latest web design trends and technologies
+                    Engage with content through live chat, polls, and community features
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Certificate</h3>
+                  <h3 className="font-semibold mb-1">Free Access</h3>
                   <p className="text-muted-foreground">
-                    Earn a certificate upon completion to showcase your skills
+                    Most content is free to access, bringing All Fours to everyone
                   </p>
                 </div>
               </div>
@@ -264,16 +291,16 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Start Your Journey?
+            Join the All Fours Revolution
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join thousands of students who have transformed their careers with our web design course
+            Connect with thousands of All Fours players and fans from around the world
           </p>
           <Button size="lg" className="text-lg px-12 py-6">
-            Enroll Now
+            Get Started Now
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
-            30-day money-back guarantee • No questions asked
+            Free to join • No credit card required
           </p>
         </div>
       </section>
@@ -281,7 +308,20 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t py-8">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2024 Web Design Course. All rights reserved.</p>
+          <div className="flex flex-col items-center justify-center gap-4 mb-4">
+            <Logo width={120} height={40} />
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/schedule" className="hover:text-foreground transition-colors">
+              Schedule
+            </Link>
+            <span>•</span>
+            <Link href="/score-app" className="hover:text-foreground transition-colors">
+              Score App
+            </Link>
+            <span>•</span>
+            <p>&copy; 2024 International All Fours Live. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </main>
